@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--自定义Button属性-->
+    <declare-styleable name="buttonM">
+        <attr name="bgColor" format="color" />
+        <attr name="bgColorPress" format="color" />
+        <attr name="bgImage" format="reference" />
+        <attr name="bgImagePress" format="reference" />
+        <attr name="textColor" format="color" />
+        <attr name="textColorPress" format="color" />
+        <attr name="fillet" format="boolean" />
+        <attr name="radius" format="float" />
+        <attr name="shape" format="enum">
+            <enum name="rectangle" value="0" />
+            <enum name="oval" value="1" />
+            <enum name="line" value="2" />
+            <enum name="ring" value="3" />
+        </attr>
+    </declare-styleable>
+    <!--圆弧进度条-->
+    <declare-styleable name="CirCleBarView">
+        <attr name="ringWidth" format="dimension"/>
+        <attr name="circleColor" format="color"/>
+        <attr name="ringColor" format="color"/>
+        <attr name="ringBgColor" format="color"/>
+    </declare-styleable>
+
+</resources>
