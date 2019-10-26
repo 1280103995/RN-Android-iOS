@@ -17,7 +17,9 @@
     "react-native": "0.61.2",
     "react-native-gesture-handler": "^1.4.1",
     "react-native-popup-dialog": "^0.18.3",
-    "react-native-swiper": "^1.5.14",
+    "react-native-reanimated": "^1.2.0",
+    "react-native-screens": "^2.0.0-alpha.6",
+    "react-native-swiper": "^1.6.0-rc.3",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^1.10.3",
     "react-navigation-tabs": "^2.5.6"

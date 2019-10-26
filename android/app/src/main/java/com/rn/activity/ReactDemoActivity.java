@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.net.Uri;
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
@@ -15,7 +14,6 @@ import android.widget.Toast;
 
 import androidx.collection.ArrayMap;
 
-import com.google.gson.Gson;
 import com.rn.R;
 import com.rn.base.BaseActivity;
 import com.rn.constants.FileConstant;
@@ -72,9 +70,7 @@ public class ReactDemoActivity extends BaseActivity {
     public void skip(View v) {
         RNRouteInfo route = new RNRouteInfo();
         route.setRouteName("Home");
-        Bundle bundle = new Bundle();
-        bundle.putString(RNRouteInfo.NATIVE_ROUTE_INFO, new Gson().toJson(route));
-        startActivity(RNActivity.class, bundle);
+        startActivity(RNActivity.class, route.getBundle(route));
     }
 
     public void skip2(View v) {
@@ -83,17 +79,13 @@ public class ReactDemoActivity extends BaseActivity {
         ArrayMap<String, Object> map = new ArrayMap<>();
         map.put("initTitle", "Android标题");
         route.setRouteParams(map);
-        Bundle bundle = new Bundle();
-        bundle.putString(RNRouteInfo.NATIVE_ROUTE_INFO, new Gson().toJson(route));
-        startActivity(RNActivity.class, bundle);
+        startActivity(RNActivity.class, route.getBundle(route));
     }
 
     public void skip3(View v) {
         RNRouteInfo route = new RNRouteInfo();
         route.setRouteName("Login");
-        Bundle bundle = new Bundle();
-        bundle.putString(RNRouteInfo.NATIVE_ROUTE_INFO, new Gson().toJson(route));
-        startActivity(RNActivity.class, bundle);
+        startActivity(RNActivity.class, route.getBundle(route));
     }
 
     /**

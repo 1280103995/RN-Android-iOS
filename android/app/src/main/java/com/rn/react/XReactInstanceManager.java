@@ -19,6 +19,7 @@ import com.rn.BuildConfig;
 import com.rn.react.module.CommonPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import com.swmansion.reanimated.ReanimatedPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -49,7 +50,8 @@ public class XReactInstanceManager {
         return Arrays.asList(
                 new MainReactPackage(),
                 mCommonPackage,
-                new RNGestureHandlerPackage()
+                new RNGestureHandlerPackage(),
+                new ReanimatedPackage()
         );
     }
 

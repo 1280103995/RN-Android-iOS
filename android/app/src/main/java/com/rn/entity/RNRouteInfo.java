@@ -1,6 +1,10 @@
 package com.rn.entity;
 
+import android.os.Bundle;
+
 import androidx.collection.ArrayMap;
+
+import com.google.gson.Gson;
 
 import java.io.Serializable;
 
@@ -25,5 +29,11 @@ public class RNRouteInfo implements Serializable {
 
     public void setRouteParams(ArrayMap routeParams) {
         this.routeParams = routeParams;
+    }
+
+    public Bundle getBundle(RNRouteInfo info){
+        Bundle bundle = new Bundle();
+        bundle.putString(RNRouteInfo.NATIVE_ROUTE_INFO, new Gson().toJson(info));
+        return bundle;
     }
 }

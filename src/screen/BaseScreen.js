@@ -1,6 +1,7 @@
 import React from 'react';
-import {BackHandler, NativeModules, StatusBar, Text, TouchableOpacity, View} from "react-native";
-import NavigationBar from "../view/NavigationBar";
+import {BackHandler, NativeModules, StatusBar, Text, TouchableOpacity, View} from 'react-native';
+import NavigationBar from '../view/NavigationBar';
+
 const CommModule = NativeModules.CommModule;
 
 export default class BaseScreen extends React.Component {
@@ -9,8 +10,15 @@ export default class BaseScreen extends React.Component {
 
   static navigationOptions = {
     header: null,
-    gesturesEnabled:false
+    gesturesEnabled: false,
   };
+
+  constructor(props) {
+    super(props);
+    this._didFocusSubscription = props.navigation.addListener('didFocus', payload =>
+      BackHandler.addEventListener('hardwareBackPress', this._onBackButtonPressAndroid),
+    );
+  }
 
   render() {
     return (
@@ -22,63 +30,79 @@ export default class BaseScreen extends React.Component {
           translucent={true}
           barStyle={'dark-content'}/>
 
-          <NavigationBar
-            leftView={this.renderNavLeftView}
-            centerView={this.renderNavCenterView}
-            rightView={this.renderNavRightView}
-          />
+        <NavigationBar
+          leftView={this.renderNavLeftView}
+          centerView={this.renderNavCenterView}
+          rightView={this.renderNavRightView}
+        />
 
 
         {this.renderView()}
 
         {/* 悬浮按钮 */}
         {/*<FloatingBtn*/}
-          {/*ref={(f) => this.fb = f}*/}
-          {/*navigation={this.props.navigation}*/}
-          {/*defaultPosition={{x: 2, y: (screenW - 50)}}/>*/}
+        {/*ref={(f) => this.fb = f}*/}
+        {/*navigation={this.props.navigation}*/}
+        {/*defaultPosition={{x: 2, y: (screenW - 50)}}/>*/}
       </View>
-    )
+    );
   }
+
+  componentDidMount() {
+    this._willBlurSubscription = this.props.navigation.addListener('willBlur', payload =>
+      BackHandler.removeEventListener('hardwareBackPress', this._onBackButtonPressAndroid),
+    );
+  }
+
+  componentWillUnmount() {
+    this._didFocusSubscription && this._didFocusSubscription.remove();
+    this._willBlurSubscription && this._willBlurSubscription.remove();
+  }
+
+  _onBackButtonPressAndroid = () => {
+    this.navLeftClick();
+    return true;//拦截返回按钮默认事件
+  };
 
   renderNavLeftView = () => {
     return (
       <TouchableOpacity activeOpacity={1} onPress={this.navLeftClick}>
         <Text>返回</Text>
       </TouchableOpacity>
-    )
+    );
   };
 
   navLeftClick = () => {
-    if (!this.props.navigation.goBack()){
-      CommModule.finish()
+    if (!this.props.navigation.goBack()) {
+      CommModule.finish();
     } else {
-      this.props.navigation.goBack()
+      this.props.navigation.goBack();
     }
   };
 
   renderNavCenterView = () => {
-    return(
+    return (
       <Text largeSize style={{backgroundColor: 'transparent'}}>{this.title}</Text>
-    )
+    );
   };
 
   renderNavRightView = () => {
-    return null
+    return null;
   };
 
   renderView() {
-    return null
+    return null;
   }
 
   _onTouchEnd(event) {
     // this.fb.onTouchEnd(event)
   }
 
-  setNavBarVisible(visible: boolean){
-    this.navBarVisible = visible
+  setNavBarVisible(visible: boolean) {
+    this.navBarVisible = visible;
   }
 
-  setTitle(title: string){
-    this.title = title
+  setTitle(title: string) {
+    this.title = title;
   }
 }
