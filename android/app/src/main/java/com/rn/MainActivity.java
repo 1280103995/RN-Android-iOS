@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.KeyEvent;
+import android.widget.Toast;
 
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.google.android.material.tabs.TabLayout;
+import com.gyf.barlibrary.ImmersionBar;
 import com.rn.adapter.TabPagerAdapter;
 import com.rn.fragment.Main1Fragment1;
 import com.rn.fragment.MainFragment1;
@@ -35,8 +37,6 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
     @BindArray(R.array.homePage)
     String[] tabTitle;
 
-    private int index = 0;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +45,12 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initView();
+
+        ImmersionBar.with(this)
+                .navigationBarColor("#FFFFFF")
+                .navigationBarDarkIcon(true) //导航栏图标是深色，不写默认为亮色
+                .fitsSystemWindows(true)
+                .init();
     }
 
     private void initView() {
@@ -56,7 +62,6 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                index = tab.getPosition();
                 if (tab.getPosition() == 0) {
                     setTitle("BaseActivity + BaseMVPFragment");
                 }else {
@@ -112,4 +117,23 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
         return handled || super.onKeyUp(keyCode, event);
     }
 
+    private long mExitTime;
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        //判断用户是否点击了“返回键”
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            //与上次点击返回键时刻作差
+            if ((System.currentTimeMillis() - mExitTime) > 2000) {
+                //大于2000ms则认为是误操作，使用Toast进行提示
+                Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                //并记录下本次点击“返回键”的时刻，以便下次进行判断
+                mExitTime = System.currentTimeMillis();
+            } else {
+                //小于2000ms则认为是用户确实希望退出程序-调用System.exit()方法进行退出
+                System.exit(0);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

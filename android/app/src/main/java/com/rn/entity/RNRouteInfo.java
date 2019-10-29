@@ -31,9 +31,9 @@ public class RNRouteInfo implements Serializable {
         this.routeParams = routeParams;
     }
 
-    public Bundle getBundle(RNRouteInfo info){
+    public Bundle getBundle(){
         Bundle bundle = new Bundle();
-        bundle.putString(RNRouteInfo.NATIVE_ROUTE_INFO, new Gson().toJson(info));
+        bundle.putString(RNRouteInfo.NATIVE_ROUTE_INFO, new Gson().toJson(this));
         return bundle;
     }
 }

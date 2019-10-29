@@ -70,7 +70,7 @@ public class ReactDemoActivity extends BaseActivity {
     public void skip(View v) {
         RNRouteInfo route = new RNRouteInfo();
         route.setRouteName("Home");
-        startActivity(RNActivity.class, route.getBundle(route));
+        startActivity(RNActivity.class, route.getBundle());
     }
 
     public void skip2(View v) {
@@ -79,13 +79,13 @@ public class ReactDemoActivity extends BaseActivity {
         ArrayMap<String, Object> map = new ArrayMap<>();
         map.put("initTitle", "Android标题");
         route.setRouteParams(map);
-        startActivity(RNActivity.class, route.getBundle(route));
+        startActivity(RNActivity.class, route.getBundle());
     }
 
     public void skip3(View v) {
         RNRouteInfo route = new RNRouteInfo();
         route.setRouteName("Login");
-        startActivity(RNActivity.class, route.getBundle(route));
+        startActivity(RNActivity.class, route.getBundle());
     }
 
     /**
