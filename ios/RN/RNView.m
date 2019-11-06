@@ -3,7 +3,7 @@
 #import <React/RCTRootView.h>
 @implementation RNView
  
-+ (UIView *)loadReactNativeView:(NSDictionary*)name
++ (UIView *)loadReactNativeView:(NSDictionary*)params
 {
   
     NSURL *jsCodeLocation;
@@ -16,7 +16,7 @@
 
     RCTRootView  *rootView =[[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                         moduleName:@"RN"
-                                                 initialProperties:name
+                                                 initialProperties:params
                                                      launchOptions:nil];
     return rootView;
 }

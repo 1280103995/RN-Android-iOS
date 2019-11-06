@@ -10,7 +10,11 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     if(this.props.NativeRouteInfo){
-      global.RouteInfo = JSON.parse(this.props.NativeRouteInfo);
+      if (typeof this.props.NativeRouteInfo === 'object'){//ios
+        global.RouteInfo = this.props.NativeRouteInfo
+      }else {//android
+        global.RouteInfo = JSON.parse(this.props.NativeRouteInfo);
+      }
     }
   }
 

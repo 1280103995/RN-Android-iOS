@@ -7,6 +7,6 @@
  
  @return 返回Native 界面
  */
-+ (UIView *)loadReactNativeView:(NSDictionary*)name;
++ (UIView *)loadReactNativeView:(NSDictionary*)params;
  
 @end

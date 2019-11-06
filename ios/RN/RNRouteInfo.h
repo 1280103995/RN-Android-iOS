@@ -10,6 +10,6 @@
 
 - (void)setRouteName:(NSString*)name;
 - (void)setRouteParams:(NSDictionary*)params;
-- (NSString*)toString:(NSDictionary*)dict;
+- (NSDictionary*)toNSDictionary;
 
 @end

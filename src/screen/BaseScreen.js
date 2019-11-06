@@ -10,7 +10,7 @@ export default class BaseScreen extends React.Component {
 
   static navigationOptions = {
     header: null,
-    gesturesEnabled: false,
+    gesturesEnabled: true,
   };
 
   constructor(props) {

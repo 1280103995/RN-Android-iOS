@@ -1,6 +1,7 @@
 #import "ViewController.h"
-#import "RNMainViewController.h"
-#import "RNView.h"
+#import "RNViewController.h"
+#import "RNRouteInfo.h"
+
 @interface ViewController ()
 
 @end
@@ -25,8 +26,18 @@
 
 
 - (void)onClickButton {
-  RNMainViewController *vc = [[RNMainViewController alloc] init];
-  [self.navigationController pushViewController:vc animated:YES];
+
+  RNViewController *vc = [[RNViewController alloc] init];
+  //初始化RN路由信息
+  RNRouteInfo *info = [[RNRouteInfo alloc] init];
+  //设置要进入的RN页面
+  [info setRouteName:@"Home"];
+  //设置要传入的参数
+  NSDictionary * params = @{@"initTitle": @"iOS标题"};
+  [info setRouteParams:params];
+  vc.rnRouteInfo = info.toNSDictionary;
+  
+  [self presentModalViewController:vc animated:YES];
 }
 
 @end

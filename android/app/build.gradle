@@ -198,7 +198,7 @@ dependencies {
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     //屏幕适配
-    implementation 'me.yatoooon:screenadaptation:1.0.9'
+    implementation 'me.yatoooon:screenadaptation:1.1.1'
     //EventBus
     implementation 'org.greenrobot:eventbus:3.1.1'
     //butterknife

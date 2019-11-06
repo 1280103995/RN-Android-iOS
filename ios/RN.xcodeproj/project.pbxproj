@@ -20,7 +20,7 @@
 		57CC84E22362CE2E00C53386 /* RNView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CC84DA2362CE2E00C53386 /* RNView.m */; };
 		57CC84E32362CE2E00C53386 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CC84DD2362CE2E00C53386 /* ViewController.m */; };
 		57CC84E42362CE2E00C53386 /* RNRouteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CC84E02362CE2E00C53386 /* RNRouteInfo.m */; };
-		57CC84E52362CE2E00C53386 /* RNMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CC84E12362CE2E00C53386 /* RNMainViewController.m */; };
+		57CC84E52362CE2E00C53386 /* RNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CC84E12362CE2E00C53386 /* RNViewController.m */; };
 		AA086B37C87E183F62DA1BEA /* libPods-RNTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF5D19058B4695F42EE5954 /* libPods-RNTests.a */; };
 		E089BFDFB42026D59C754930 /* libPods-RN-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05982B1E12532DD2DB8BB627 /* libPods-RN-tvOS.a */; };
 		FCB93242A6FD100F8E44E0F3 /* libPods-RN-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 701F656FA53549D6E8ED0DFF /* libPods-RN-tvOSTests.a */; };
@@ -68,9 +68,9 @@
 		57CC84DC2362CE2E00C53386 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = RN/ViewController.h; sourceTree = "<group>"; };
 		57CC84DD2362CE2E00C53386 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = RN/ViewController.m; sourceTree = "<group>"; };
 		57CC84DE2362CE2E00C53386 /* RNView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNView.h; path = RN/RNView.h; sourceTree = "<group>"; };
-		57CC84DF2362CE2E00C53386 /* RNMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNMainViewController.h; path = RN/RNMainViewController.h; sourceTree = "<group>"; };
+		57CC84DF2362CE2E00C53386 /* RNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNViewController.h; path = RN/RNViewController.h; sourceTree = "<group>"; };
 		57CC84E02362CE2E00C53386 /* RNRouteInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNRouteInfo.m; path = RN/RNRouteInfo.m; sourceTree = "<group>"; };
-		57CC84E12362CE2E00C53386 /* RNMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNMainViewController.m; path = RN/RNMainViewController.m; sourceTree = "<group>"; };
+		57CC84E12362CE2E00C53386 /* RNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNViewController.m; path = RN/RNViewController.m; sourceTree = "<group>"; };
 		6764ABB0AE26244D0000CD64 /* Pods-RN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN.release.xcconfig"; path = "Target Support Files/Pods-RN/Pods-RN.release.xcconfig"; sourceTree = "<group>"; };
 		701F656FA53549D6E8ED0DFF /* libPods-RN-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RN-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0D15CADE6021B536521336 /* Pods-RN-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN-tvOS.release.xcconfig"; path = "Target Support Files/Pods-RN-tvOS/Pods-RN-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 		13B07FAE1A68108700A75B9A /* RN */ = {
 			isa = PBXGroup;
 			children = (
-				57CC84DF2362CE2E00C53386 /* RNMainViewController.h */,
-				57CC84E12362CE2E00C53386 /* RNMainViewController.m */,
+				57CC84DF2362CE2E00C53386 /* RNViewController.h */,
+				57CC84E12362CE2E00C53386 /* RNViewController.m */,
 				57CC84DB2362CE2E00C53386 /* RNRouteInfo.h */,
 				57CC84E02362CE2E00C53386 /* RNRouteInfo.m */,
 				57CC84DE2362CE2E00C53386 /* RNView.h */,
@@ -554,7 +554,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				57CC84E32362CE2E00C53386 /* ViewController.m in Sources */,
-				57CC84E52362CE2E00C53386 /* RNMainViewController.m in Sources */,
+				57CC84E52362CE2E00C53386 /* RNViewController.m in Sources */,
 				57CC84E22362CE2E00C53386 /* RNView.m in Sources */,
 				57CC84E42362CE2E00C53386 /* RNRouteInfo.m in Sources */,
 			);
