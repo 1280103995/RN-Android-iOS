@@ -1,10 +1,7 @@
 package com.rn.base;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -24,6 +21,7 @@ import com.gyf.barlibrary.ImmersionBar;
 import com.rn.MainActivity;
 import com.rn.R;
 import com.rn.util.ActivityUtil;
+import com.rn.util.NetWorkUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -407,7 +405,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IMvpView
 
     @Override
     public void onApiException(Throwable e) {
-        if (!isNetWorking(this)) {
+        if (!NetWorkUtil.isNetWorking(this)) {
             showToast("网络不可用");
         } else if (e instanceof SocketTimeoutException) {
             showToast("服务器响应超时");
@@ -425,29 +423,4 @@ public abstract class BaseActivity extends AppCompatActivity implements IMvpView
         showToast(msg);
     }
 
-    /**
-     * 网络监测
-     *
-     * @param context
-     * @return
-     */
-    public static boolean isNetWorking(Context context) {
-        boolean flag = checkNet(context);
-        if (!flag) {
-            Toast.makeText(context, "当前设备网络异常，请检查后再重试！", Toast.LENGTH_SHORT).show();
-        }
-        return flag;
-    }
-
-    private static boolean checkNet(Context context) {
-        if (context != null) {
-            ConnectivityManager mConnectivityManager = (ConnectivityManager) context
-                    .getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo mNetworkInfo = mConnectivityManager.getActiveNetworkInfo();
-            if (mNetworkInfo != null) {
-                return mNetworkInfo.isAvailable();
-            }
-        }
-        return false;
-    }
 }

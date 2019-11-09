@@ -2,7 +2,7 @@ import React from 'react';
 import {BackHandler, NativeModules, StatusBar, Text, TouchableOpacity, View} from 'react-native';
 import NavigationBar from '../view/NavigationBar';
 
-const CommModule = NativeModules.CommModule;
+const CommonModule = NativeModules.CommonModule;
 
 export default class BaseScreen extends React.Component {
   navBarVisible: boolean = true;
@@ -74,7 +74,7 @@ export default class BaseScreen extends React.Component {
 
   navLeftClick = () => {
     if (!this.props.navigation.goBack()) {
-      CommModule.finish();
+      CommonModule.finish();
     } else {
       this.props.navigation.goBack();
     }

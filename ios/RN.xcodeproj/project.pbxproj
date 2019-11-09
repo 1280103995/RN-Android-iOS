@@ -17,6 +17,8 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* RNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNTests.m */; };
+		5734D3C023758983000CF0EB /* CommonModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 5734D3BF23758983000CF0EB /* CommonModule.m */; };
+		5734D3C323758FA2000CF0EB /* NativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5734D3C223758FA2000CF0EB /* NativeViewController.m */; };
 		57CC84E22362CE2E00C53386 /* RNView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CC84DA2362CE2E00C53386 /* RNView.m */; };
 		57CC84E32362CE2E00C53386 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CC84DD2362CE2E00C53386 /* ViewController.m */; };
 		57CC84E42362CE2E00C53386 /* RNRouteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CC84E02362CE2E00C53386 /* RNRouteInfo.m */; };
@@ -63,6 +65,10 @@
 		1B87200A336FB504CBD81DC0 /* Pods-RN-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-RN-tvOS/Pods-RN-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* RN-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RN-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* RN-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RN-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5734D3BF23758983000CF0EB /* CommonModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonModule.m; sourceTree = "<group>"; };
+		5734D3C1237589A4000CF0EB /* CommonModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonModule.h; sourceTree = "<group>"; };
+		5734D3C223758FA2000CF0EB /* NativeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeViewController.m; sourceTree = "<group>"; };
+		5734D3C423758FAB000CF0EB /* NativeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeViewController.h; sourceTree = "<group>"; };
 		57CC84DA2362CE2E00C53386 /* RNView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNView.m; path = RN/RNView.m; sourceTree = "<group>"; };
 		57CC84DB2362CE2E00C53386 /* RNRouteInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNRouteInfo.h; path = RN/RNRouteInfo.h; sourceTree = "<group>"; };
 		57CC84DC2362CE2E00C53386 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = RN/ViewController.h; sourceTree = "<group>"; };
@@ -152,6 +158,10 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				5734D3BF23758983000CF0EB /* CommonModule.m */,
+				5734D3C1237589A4000CF0EB /* CommonModule.h */,
+				5734D3C223758FA2000CF0EB /* NativeViewController.m */,
+				5734D3C423758FAB000CF0EB /* NativeViewController.h */,
 			);
 			name = RN;
 			sourceTree = "<group>";
@@ -555,8 +565,10 @@
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				57CC84E32362CE2E00C53386 /* ViewController.m in Sources */,
 				57CC84E52362CE2E00C53386 /* RNViewController.m in Sources */,
+				5734D3C323758FA2000CF0EB /* NativeViewController.m in Sources */,
 				57CC84E22362CE2E00C53386 /* RNView.m in Sources */,
 				57CC84E42362CE2E00C53386 /* RNRouteInfo.m in Sources */,
+				5734D3C023758983000CF0EB /* CommonModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

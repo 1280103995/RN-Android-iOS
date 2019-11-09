@@ -21,11 +21,20 @@
  }
  */
 - (NSDictionary *)toNSDictionary{
-  NSDictionary *dic = @{@"NativeRouteInfo":@{
-                            @"routeName":routeName,
-                            @"routeParams": routeParams
-                          }
-                       };
+  NSDictionary *dic;
+  if (routeParams == nil) {
+    dic = @{@"NativeRouteInfo":@{
+                 @"routeName":routeName
+              }
+           };
+  }else{
+    dic = @{@"NativeRouteInfo":@{
+                 @"routeName":routeName,
+                 @"routeParams": routeParams
+              }
+           };
+  }
+
  return dic;
 }
 

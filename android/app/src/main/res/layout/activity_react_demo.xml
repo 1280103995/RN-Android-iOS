@@ -52,25 +52,5 @@
         android:textColor="@android:color/white"
         android:background="@color/colorPrimary"
         />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:padding="10dp"
-        android:text="向RN发消息"
-        android:onClick="sendMsgToRN"
-        android:textColor="@android:color/white"
-        android:background="@color/colorPrimary"
-        />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:padding="10dp"
-        android:text="EventBus给Fragment4发消息"
-        android:onClick="sendMsg2Fragment4"
-        android:textColor="@android:color/white"
-        android:background="@color/colorPrimary"
-        />
 </LinearLayout>

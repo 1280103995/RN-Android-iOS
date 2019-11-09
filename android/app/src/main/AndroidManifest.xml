@@ -44,6 +44,7 @@
         <activity android:name=".activity.TabActivity" />
         <activity android:name=".activity.ReactDemoActivity" />
         <activity android:name=".activity.TestActivity" />
+        <activity android:name=".activity.RNDemoActivity" />
     </application>
 
 </manifest>

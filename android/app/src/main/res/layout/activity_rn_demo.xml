@@ -10,13 +10,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="测试从原生携带参数进入React Native页面，以及RN、原生页面之间的跳转路由处理问题"/>
+        android:text="测试多次：原生 -> React Native -> 原生 -> React Native后，路由栈退栈是否正常"/>
 
     <Button
         android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="进入RN页面" />
+        android:text="再次进入RN页面" />
 
 </LinearLayout>

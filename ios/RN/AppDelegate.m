@@ -15,8 +15,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  ViewController * rootViewController = [ViewController new];
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  
+  UINavigationController *rootViewController = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
+  //隐藏导航栏
+  [rootViewController setNavigationBarHidden:YES animated:YES];
+  self.nav = rootViewController;
   self.window.rootViewController = rootViewController;
   //视图可见
   [self.window makeKeyAndVisible];

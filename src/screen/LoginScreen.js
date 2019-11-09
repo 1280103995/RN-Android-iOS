@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Text, TextInput, View} from "react-native";
+import {Button, Text, TextInput, View} from 'react-native';
 import BaseScreen from "./BaseScreen";
 
 export default class LoginScreen extends BaseScreen {

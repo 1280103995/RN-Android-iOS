@@ -13,8 +13,8 @@ import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.google.android.material.tabs.TabLayout;
 import com.gyf.barlibrary.ImmersionBar;
 import com.rn.adapter.TabPagerAdapter;
-import com.rn.fragment.Main1Fragment1;
 import com.rn.fragment.MainFragment1;
+import com.rn.fragment.MainFragment2;
 import com.rn.fragment.MainFragment3;
 import com.rn.fragment.MainFragment4;
 import com.rn.react.ReactFragment;
@@ -55,9 +55,9 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
 
     private void initView() {
         listFragment.add(new MainFragment1());
-        listFragment.add(new Main1Fragment1());
+//        listFragment.add(new MainFragment2());
         listFragment.add(new MainFragment3());
-        listFragment.add(new MainFragment4().newInstance("fragment4"));
+        listFragment.add(new MainFragment4());
 
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

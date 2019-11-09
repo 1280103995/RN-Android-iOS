@@ -69,16 +69,16 @@ public class ReactDemoActivity extends BaseActivity {
      */
     public void skip(View v) {
         RNRouteInfo route = new RNRouteInfo();
-        route.setRouteName("Home");
+        route.setRouteName("TestOne");
+        ArrayMap<String, Object> map = new ArrayMap<>();
+        map.put("initTitle", "Android标题");
+        route.setRouteParams(map);
         startActivity(RNActivity.class, route.getBundle());
     }
 
     public void skip2(View v) {
         RNRouteInfo route = new RNRouteInfo();
-        route.setRouteName("One");
-        ArrayMap<String, Object> map = new ArrayMap<>();
-        map.put("initTitle", "Android标题");
-        route.setRouteParams(map);
+        route.setRouteName("TestTwo");
         startActivity(RNActivity.class, route.getBundle());
     }
 
@@ -86,18 +86,6 @@ public class ReactDemoActivity extends BaseActivity {
         RNRouteInfo route = new RNRouteInfo();
         route.setRouteName("Login");
         startActivity(RNActivity.class, route.getBundle());
-    }
-
-    /**
-     * 向RN发送消息
-     * @param v
-     */
-    public void sendMsgToRN(View v) {
-        XReactInstanceManager.getInstance().getCommonPackage().mModule.nativeCallRn("hello");
-    }
-
-    public void sendMsg2Fragment4(View v){
-        EventBus.getDefault().post("Activity 给我发消息了");
     }
 
     /**

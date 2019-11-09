@@ -9,7 +9,7 @@ import {
   PixelRatio,
   Dimensions,
   Platform,
-  StatusBar
+  StatusBar,
 } from 'react-native';
 
 export let screenW = Dimensions.get('window').width;
@@ -67,8 +67,8 @@ export function px2sp(size: Number) {
 export function wh(width: Number, height: Number = width) {
   return {
     width: px2dp(width),
-    height: px2dp(height)
-  }
+    height: px2dp(height),
+  };
 }
 
 /**
@@ -80,8 +80,8 @@ export function wh(width: Number, height: Number = width) {
 export function paddingTB(top: Number, bottom: Number = top) {
   return {
     paddingTop: px2dp(top),
-    paddingBottom: px2dp(bottom)
-  }
+    paddingBottom: px2dp(bottom),
+  };
 }
 
 /**
@@ -93,8 +93,8 @@ export function paddingTB(top: Number, bottom: Number = top) {
 export function paddingLR(left: Number, right: Number = left) {
   return {
     paddingLeft: px2dp(left),
-    paddingRight: px2dp(right)
-  }
+    paddingRight: px2dp(right),
+  };
 }
 
 /**
@@ -106,8 +106,8 @@ export function paddingLR(left: Number, right: Number = left) {
 export function marginTB(top: Number, bottom: Number = top) {
   return {
     marginTop: px2dp(top),
-    marginBottom: px2dp(bottom)
-  }
+    marginBottom: px2dp(bottom),
+  };
 }
 
 /**
@@ -119,8 +119,8 @@ export function marginTB(top: Number, bottom: Number = top) {
 export function marginLR(left: Number, right: Number = left) {
   return {
     marginLeft: px2dp(left),
-    marginRight: px2dp(right)
-  }
+    marginRight: px2dp(right),
+  };
 }
 
 /**
@@ -132,8 +132,8 @@ export function marginLR(left: Number, right: Number = left) {
 export function borderWidthTB(top: Number, bottom: Number = top) {
   return {
     borderTopWidth: px2dp(top),
-    borderBottomWidth: px2dp(bottom)
-  }
+    borderBottomWidth: px2dp(bottom),
+  };
 }
 
 /**
@@ -145,8 +145,8 @@ export function borderWidthTB(top: Number, bottom: Number = top) {
 export function borderWidthLR(left: Number, right: Number = left) {
   return {
     borderLeftWidth: px2dp(left),
-    borderRightWidth: px2dp(right)
-  }
+    borderRightWidth: px2dp(right),
+  };
 }
 
 /**
@@ -158,7 +158,7 @@ export function isIphoneX() {
     Platform.OS === 'ios' &&
     ((screenH === X_HEIGHT && screenW === X_WIDTH) ||
       (screenH === X_WIDTH && screenW === X_HEIGHT))
-  )
+  );
 }
 
 /**
@@ -172,10 +172,12 @@ export function ifIphoneX(iphoneXStyle, iosStyle = {}, androidStyle) {
   if (isIphoneX()) {
     return iphoneXStyle;
   } else if (Platform.OS === 'ios') {
-    return iosStyle
+    return iosStyle;
   } else {
-    if (androidStyle) return androidStyle;
-    return iosStyle
+    if (androidStyle) {
+      return androidStyle;
+    }
+    return iosStyle;
   }
 }
 
@@ -183,17 +185,21 @@ export function isIphoneMAX() {
   return (
     Platform.OS === 'ios' &&
     (screenH === X_MAX_HEIGHT && screenW === X_MAX_WIDTH)
-  )
+  );
 }
 
 export function getStatusBarHeight() {
   let height = 0;
   if (isIphoneMAX()) {
     height = px2dp(54);//刘海高度
-  }else if(isIphoneX())  {
+  } else if (isIphoneX()) {
     height = px2dp(58);//刘海高度
-  }else  {
-    height = Platform.OS === 'ios' ? px2dp(40) : StatusBar.currentHeight
+  } else {
+    if (Platform.OS === 'ios') {
+      height = px2dp(40);
+    } else {
+      height = Platform.OS === 'android' && Platform.Version >= 19 ? StatusBar.currentHeight : 0;
+    }
   }
   return height;
 }

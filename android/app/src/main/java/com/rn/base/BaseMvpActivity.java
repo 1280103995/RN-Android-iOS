@@ -29,6 +29,11 @@ public abstract class BaseMvpActivity<P extends IMvpPresenter> extends BaseActiv
     }
 
     @Override
+    protected void initData() {
+
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
         if (presenter != null) {

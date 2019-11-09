@@ -1,14 +1,16 @@
 import {Tabs} from "./TabNavigator";
 import RootScreen from "../screen/RootScreen";
-import HomeScreen from "../screen/HomeScreen";
-import OneScreen from "../screen/OneScreen";
+import TestOneScreen from "../screen/TestOneScreen";
 import LoginScreen from "../screen/LoginScreen";
+import TestTwoScreen from '../screen/TestTwoScreen';
+import TestThreeScreen from '../screen/TestThreeScreen';
 
 /*需要注册的页面*/
 export default {
   Root: {screen: RootScreen},
   MainTab: {screen: Tabs},
-  Home: {screen: HomeScreen},
-  One: {screen: OneScreen},
+  TestOne: {screen: TestOneScreen},
+  TestTwo: {screen: TestTwoScreen},
+  TestThree: {screen: TestThreeScreen},
   Login: {screen: LoginScreen},
 };
